@@ -1,5 +1,6 @@
-# Bubble Sort
+# 버블 정렬 (Bubble Sort)
 
+# 버블 정렬 - 오름차순 (Bubble Sort - Ascending)
 def bubbleSort_ASC(arr):
     n = len(arr)
     for i in range(n-1, -1, -1):
@@ -8,6 +9,7 @@ def bubbleSort_ASC(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
 
+# 버블 정렬 - 내림차순 (Bubble Sort - Descending)
 def bubbleSort_DESC(arr):
     n = len(arr)
     for i in range(n):
@@ -16,6 +18,7 @@ def bubbleSort_DESC(arr):
                 arr[j], arr[j-1] = arr[j-1], arr[j]
     return arr
 
+# 개선된 버블 정렬 - 오름차순 (Improved Bubble Sort - Ascending)
 def bubbleSort2_ASC(arr):
     n = len(arr)
     for i in range(n-1, -1, -1):
@@ -27,7 +30,13 @@ def bubbleSort2_ASC(arr):
         if change == False:
             break
     return arr
-                
-lst = [69, 10, 30, 2, 16, 8, 31, 22, 71, 27, 48, 6, 51, 50, 13, 98]; print(lst, end=''); print('->', bubbleSort_ASC(lst))
-lst = [69, 10, 30, 2, 16, 8, 31, 22, 71, 27, 48, 6, 51, 50, 13, 98]; print(lst, end=''); print('->', bubbleSort_DESC(lst))
-lst = [69, 10, 30, 2, 16, 8, 31, 22, 71, 27, 48, 6, 51, 50, 13, 98]; print(lst, end=''); print('->', bubbleSort2_ASC(lst))
+
+# 난수를 생성하여 test해보기 (Test by random number) 
+from random import randint
+
+lst = [randint(1, 100) for i in range(5)]
+print('Bubble Sort(ASC) :', lst, end=' '); print('->', bubbleSort_ASC(lst))
+lst = [randint(1, 100) for i in range(5)]
+print('Bubble Sort(DESC) :', lst, end=' ');print('->', bubbleSort_DESC(lst))
+lst = [randint(1, 100) for i in range(5)]
+print('Improved Bubble Sort(ASC) :', lst, end=' ');print('->', bubbleSort2_ASC(lst))
